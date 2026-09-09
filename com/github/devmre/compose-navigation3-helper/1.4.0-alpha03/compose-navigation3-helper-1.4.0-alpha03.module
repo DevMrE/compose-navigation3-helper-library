@@ -1,0 +1,373 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.devmre",
+    "module": "compose-navigation3-helper",
+    "version": "1.4.0-alpha03",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.ui",
+          "module": "ui",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.runtime",
+          "module": "runtime",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.foundation",
+          "module": "foundation",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-viewmodel-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-runtime-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.9.2"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-compose",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.0.8"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation3",
+          "module": "navigation3-ui",
+          "version": {
+            "requires": "1.0.0-alpha05"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "compose-navigation3-helper-metadata-1.4.0-alpha03.jar",
+          "url": "compose-navigation3-helper-1.4.0-alpha03.jar",
+          "size": 5586,
+          "sha512": "a1e89bfea964a19dd0ba4d4378133a87c2741fe2f1662cf83c6a51263fede2b8593f5d338a2ab6d2d644cfd953365dcb77e3b9c2be28ae4349d97e3f1d69c5e9",
+          "sha256": "3d04576fe1a1c4e4571cc73a477c3fea8be52807787ee7133c2e0bf28a50069c",
+          "sha1": "ba5776764db10f6fc0131552ab63a0f077da87cc",
+          "md5": "b581c8bee0798212e0453f1fd5123324"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "compose-navigation3-helper-kotlin-1.4.0-alpha03-sources.jar",
+          "url": "compose-navigation3-helper-1.4.0-alpha03-sources.jar",
+          "size": 3974,
+          "sha512": "be710c99f0e34d1d8ca6c5e6ce3c3412bdc55349000136ee9172e5ecf0722920e63258898a26cb25d9c0a65659bea6b230ab159cfd660bdc71c5aab691fc9311",
+          "sha256": "f150ec0704191d9082cd8acfdfb126ec1d47dec9d341a9ba948e11937e7aa7a0",
+          "sha1": "0455b4798c50a2544bae87e631918a53bcae6539",
+          "md5": "88b004e6049185e9a1fe2c7248238142"
+        }
+      ]
+    },
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-android/1.4.0-alpha03/compose-navigation3-helper-android-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-android",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-android/1.4.0-alpha03/compose-navigation3-helper-android-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-android",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-android/1.4.0-alpha03/compose-navigation3-helper-android-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-android",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "desktopApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-desktop/1.4.0-alpha03/compose-navigation3-helper-desktop-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-desktop",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "desktopRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-desktop/1.4.0-alpha03/compose-navigation3-helper-desktop-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-desktop",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "desktopSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-desktop/1.4.0-alpha03/compose-navigation3-helper-desktop-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-desktop",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-iosarm64/1.4.0-alpha03/compose-navigation3-helper-iosarm64-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-iosarm64",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-iosarm64/1.4.0-alpha03/compose-navigation3-helper-iosarm64-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-iosarm64",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "iosArm64ResourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.libraryelements": "kotlin-multiplatformresources",
+        "org.gradle.usage": "kotlin-multiplatformresources",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-iosarm64/1.4.0-alpha03/compose-navigation3-helper-iosarm64-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-iosarm64",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-iosarm64/1.4.0-alpha03/compose-navigation3-helper-iosarm64-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-iosarm64",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-iossimulatorarm64/1.4.0-alpha03/compose-navigation3-helper-iossimulatorarm64-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-iossimulatorarm64",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-iossimulatorarm64/1.4.0-alpha03/compose-navigation3-helper-iossimulatorarm64-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-iossimulatorarm64",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ResourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.libraryelements": "kotlin-multiplatformresources",
+        "org.gradle.usage": "kotlin-multiplatformresources",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-iossimulatorarm64/1.4.0-alpha03/compose-navigation3-helper-iossimulatorarm64-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-iossimulatorarm64",
+        "version": "1.4.0-alpha03"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../compose-navigation3-helper-iossimulatorarm64/1.4.0-alpha03/compose-navigation3-helper-iossimulatorarm64-1.4.0-alpha03.module",
+        "group": "com.github.devmre",
+        "module": "compose-navigation3-helper-iossimulatorarm64",
+        "version": "1.4.0-alpha03"
+      }
+    }
+  ]
+}
