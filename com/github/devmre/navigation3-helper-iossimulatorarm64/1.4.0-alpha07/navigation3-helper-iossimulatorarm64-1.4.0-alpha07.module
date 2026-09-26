@@ -1,0 +1,344 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../navigation3-helper/1.4.0-alpha07/navigation3-helper-1.4.0-alpha07.module",
+    "group": "com.github.devmre",
+    "module": "navigation3-helper",
+    "version": "1.4.0-alpha07",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.ui",
+          "module": "ui",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.runtime",
+          "module": "runtime",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.foundation",
+          "module": "foundation",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-viewmodel-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-runtime-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.9.2"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-compose",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.0.8"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation3",
+          "module": "navigation3-ui",
+          "version": {
+            "requires": "1.0.0-alpha05"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation3-helper-iosSimulatorArm64Main-1.4.0-alpha07.klib",
+          "url": "navigation3-helper-iossimulatorarm64-1.4.0-alpha07.klib",
+          "size": 19588,
+          "sha512": "85e9c576276cf43cb2fecb305f922a8a6e0ce5189f6e099e42837e0f63beab7a40fcf8ee774b26d61a30add8862f8091ff3e199d887b7f0c8bc4ee2392f15c9e",
+          "sha256": "b7e7a2d95c77f8aa6add44a7869ebfea0fcedb64c4c9bd27b9246bda2c85f387",
+          "sha1": "f3d467e8d59cafe6cc12b206e5834dd4b10cc5c2",
+          "md5": "abdda570d4077464846586128d60d325"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "navigation3-helper-iossimulatorarm64-1.4.0-alpha07-sources.jar",
+          "url": "navigation3-helper-iossimulatorarm64-1.4.0-alpha07-sources.jar",
+          "size": 3996,
+          "sha512": "59f85d7c64d9e2a62187ff0acc6f01c273edb337c2fcba4f98b7d7feccc48d4e835b68062c7d9dadeaeea31caa60474788782308d731169ffaaf815f1dfa8790",
+          "sha256": "26a8eaf0b316c3a70aa8816f0c3abec666ce0bdfc2e2e9f028bacf2072e56483",
+          "sha1": "d094be7b8337a60da1f92ba7c7b1506e9527b351",
+          "md5": "76567167998fd7092e56199b1b02c27d"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64ResourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.libraryelements": "kotlin-multiplatformresources",
+        "org.gradle.usage": "kotlin-multiplatformresources",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.ui",
+          "module": "ui",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.runtime",
+          "module": "runtime",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.foundation",
+          "module": "foundation",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-viewmodel-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-runtime-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.9.2"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-compose",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.0.8"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation3",
+          "module": "navigation3-ui",
+          "version": {
+            "requires": "1.0.0-alpha05"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation3-helper-1.4.0-alpha07.kotlin_resources.zip",
+          "url": "navigation3-helper-iossimulatorarm64-1.4.0-alpha07-kotlin_resources.kotlin_resources.zip",
+          "size": 360,
+          "sha512": "d8d8a6a795b1a47d25da4368358aab1bca0fe38b193b8e30b8de7d02a509c3353d69a497f1a15ca4b530e96abcec22fcb8c427d985d471652509454b0203380f",
+          "sha256": "a250f8c139cc9bc6ee95033346f55cc5dc6d61df7a601b6baca33dc1898e8f5b",
+          "sha1": "7efe6b61c4a3840136729a8b4dd1c1d01816261c",
+          "md5": "b47c84233a32b1abc7f314c779d4ba92"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.ui",
+          "module": "ui",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.runtime",
+          "module": "runtime",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.foundation",
+          "module": "foundation",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-viewmodel-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-runtime-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.9.2"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-compose",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.0.8"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation3",
+          "module": "navigation3-ui",
+          "version": {
+            "requires": "1.0.0-alpha05"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation3-helper-iossimulatorarm64-1.4.0-alpha07-metadata.jar",
+          "url": "navigation3-helper-iossimulatorarm64-1.4.0-alpha07-metadata.jar",
+          "size": 261,
+          "sha512": "c20e486d5e4a23990826706e5f0afbe084ac4e911d13bd06550db9b1562f31002a34388b6b62ead18f083e192b54ab14a7655fd4720dd4558e819d90c165f015",
+          "sha256": "abf5f3bd1342968d54210c5434c1a038779d41d46bbdaf6c3099f7618503fa2d",
+          "sha1": "1c2a50fbcd7cb1ec146f628b13ebe814531ae4f1",
+          "md5": "121c8afa690833eacda11db1d5ff0074"
+        }
+      ]
+    }
+  ]
+}

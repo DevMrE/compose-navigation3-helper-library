@@ -1,0 +1,163 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../navigation3-helper/1.4.0-alpha07/navigation3-helper-1.4.0-alpha07.module",
+    "group": "com.github.devmre",
+    "module": "navigation3-helper",
+    "version": "1.4.0-alpha07",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "desktopApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "navigation3-helper-desktop-1.4.0-alpha07.jar",
+          "url": "navigation3-helper-desktop-1.4.0-alpha07.jar",
+          "size": 16598,
+          "sha512": "d508ecf133f5e9bc17e1c039842eebae64545778f5cd4b8bf750e23460dfaa17a2432ceea589fa12a59a685c46bc41b864e575b3ce7f50b27c26960e7e482486",
+          "sha256": "3df6a4477b5d8d862cb69c759078334e40adf9fb9748799bbb102ff96bd35024",
+          "sha1": "5b490a59d0c5e48df0df4fe8c1019fec82a4c714",
+          "md5": "8c05aaaeaba90ab8ce440ac4bc55ec8d"
+        }
+      ]
+    },
+    {
+      "name": "desktopRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.ui",
+          "module": "ui",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.runtime",
+          "module": "runtime",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.foundation",
+          "module": "foundation",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-viewmodel-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.lifecycle",
+          "module": "lifecycle-runtime-compose",
+          "version": {
+            "requires": "2.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.9.2"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-compose",
+          "version": {
+            "requires": "4.2.1"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.0.8"
+          }
+        },
+        {
+          "group": "org.jetbrains.androidx.navigation3",
+          "module": "navigation3-ui",
+          "version": {
+            "requires": "1.0.0-alpha05"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation3-helper-desktop-1.4.0-alpha07.jar",
+          "url": "navigation3-helper-desktop-1.4.0-alpha07.jar",
+          "size": 16598,
+          "sha512": "d508ecf133f5e9bc17e1c039842eebae64545778f5cd4b8bf750e23460dfaa17a2432ceea589fa12a59a685c46bc41b864e575b3ce7f50b27c26960e7e482486",
+          "sha256": "3df6a4477b5d8d862cb69c759078334e40adf9fb9748799bbb102ff96bd35024",
+          "sha1": "5b490a59d0c5e48df0df4fe8c1019fec82a4c714",
+          "md5": "8c05aaaeaba90ab8ce440ac4bc55ec8d"
+        }
+      ]
+    },
+    {
+      "name": "desktopSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "navigation3-helper-desktop-1.4.0-alpha07-sources.jar",
+          "url": "navigation3-helper-desktop-1.4.0-alpha07-sources.jar",
+          "size": 3996,
+          "sha512": "59f85d7c64d9e2a62187ff0acc6f01c273edb337c2fcba4f98b7d7feccc48d4e835b68062c7d9dadeaeea31caa60474788782308d731169ffaaf815f1dfa8790",
+          "sha256": "26a8eaf0b316c3a70aa8816f0c3abec666ce0bdfc2e2e9f028bacf2072e56483",
+          "sha1": "d094be7b8337a60da1f92ba7c7b1506e9527b351",
+          "md5": "76567167998fd7092e56199b1b02c27d"
+        }
+      ]
+    }
+  ]
+}
