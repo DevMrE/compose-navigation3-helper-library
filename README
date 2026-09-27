@@ -46,7 +46,7 @@ Add the library to your Version Catalog:
 
 ```toml
 [versions]
-composeNavigation3HelperVersion = "1.4.0-alpha06"
+composeNavigation3HelperVersion = [version]
 
 [libraries]
 composeNavigation3Helper = { module = "com.github.devmre:navigation", version.ref = "composeNavigation3HelperVersion" }
