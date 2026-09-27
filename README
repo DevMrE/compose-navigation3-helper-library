@@ -1,1 +1,300 @@
 
+# ComposeNavigation3Helper
+
+A lightweight **Kotlin Multiplatform (KMP)** helper library for **Jetpack Navigation 3**, enabling **ViewModel-driven, type-safe navigation** across multiplatform applications (Android, iOS, JVM/Desktop).
+
+By decoupling navigation control from the UI layer, this library allows navigation actions to be triggered directly from **ViewModels** or business logic, eliminating UI/ViewModel "ping-pong" patterns and simplifying multiplatform app architecture.
+
+---
+
+## Features
+
+- 🚀 **Kotlin Multiplatform Compatible**: Shared navigation logic for Android, iOS, and Desktop (JVM).
+- 🎯 **Jetpack Navigation 3 Integration**: Native support for `NavKey` and `NavDisplay`.
+- 🧠 **ViewModel-Driven Navigation**: Execute navigation commands directly within application/business logic.
+- ⚡ **Type-Safe Destinations**: Strongly-typed routes using `@Serializable` data objects or classes implementing `NavKey`.
+- 🤹 **Flexible Backstack Controls**:
+  - `navigateTo(route, options)` with support for `launchSingleTop`, `replace`, and `popUpTo`.
+  - `switchTo(route)` for top-level tab/destination switching without dirtying backstack history.
+  - `navigateBack()` and `popUpTo(clazz, inclusive)`.
+- 🧩 **Koin Integration**: First-class support for Koin DI via `navigatorQualifier()` and `@Composable koinNavigation()`.
+- 🛠️ **DI Agnostic**: Works seamlessly with Koin, Hilt, Kodein, or manual dependency injection setups.
+
+---
+
+## Installation
+
+### 1. Add Repository (`settings.gradle.kts`)
+
+In your root or module `settings.gradle.kts`, add the GitHub Maven repository:
+
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url = uri("https://raw.githubusercontent.com/DevMrE/maven-repo/main")
+        }
+    }
+}
+```
+
+### 2. Add Dependency (`libs.versions.toml`)
+
+Add the library to your Version Catalog:
+
+```toml
+[versions]
+composeNavigation3HelperVersion = "1.4.0-alpha06"
+
+[libraries]
+composeNavigation3Helper = { module = "com.github.devmre:navigation", version.ref = "composeNavigation3HelperVersion" }
+```
+
+In your module's `build.gradle.kts`:
+
+```kotlin
+sourceSets {
+    commonMain.dependencies {
+        implementation(libs.composeNavigation3Helper)
+    }
+}
+```
+
+---
+
+## How to Use
+
+### 1. Define Routes (`NavKey`)
+
+Define your navigation destinations using `androidx.navigation3.runtime.NavKey`. You can use sealed interfaces/classes or Kotlin `@Serializable` objects.
+
+```kotlin
+import androidx.navigation3.runtime.NavKey
+import kotlinx.serialization.Serializable
+
+sealed interface AppRoute : NavKey {
+
+    @Serializable
+    data object Home : AppRoute
+
+    @Serializable
+    data class Detail(val itemId: String) : AppRoute
+
+    @Serializable
+    data object Profile : AppRoute
+
+    @Serializable
+    data object Settings : AppRoute
+}
+```
+
+---
+
+### 2. Dependency Injection & Setup
+
+#### Option A: Using Koin
+
+Register your `RegisterNavigationGraph` using the provided `navigatorQualifier()` function:
+
+```kotlin
+import com.devmre.compose.navigation3.helper.Navigator
+import com.devmre.compose.navigation3.helper.RegisterNavigationGraph
+import com.devmre.compose.navigation3.helper.navigatorQualifier
+import org.koin.dsl.module
+
+val navigationModule = module {
+    single<Navigator<AppRoute>>(qualifier = navigatorQualifier<AppRoute>()) {
+        RegisterNavigationGraph(startDestination = AppRoute.Home)
+    }
+}
+```
+
+In your ViewModel, inject `Navigator<AppRoute>`:
+
+```kotlin
+class HomeViewModel(
+    private val navigator: Navigator<AppRoute>
+) : ViewModel() {
+
+    fun onOpenDetail(id: String) {
+        navigator.navigateTo(AppRoute.Detail(itemId = id))
+    }
+
+    fun onOpenProfile() {
+        navigator.navigateTo(
+            route = AppRoute.Profile,
+            options = NavigationOptions(launchSingleTop = true)
+        )
+    }
+}
+```
+
+In your Composable, retrieve the navigator using `koinNavigation()`:
+
+```kotlin
+@Composable
+fun AppContent() {
+    val navigator = koinNavigation<AppRoute>()
+    // Use navigator.backStack in NavDisplay
+}
+```
+
+#### Option B: Manual Setup / Other DI Frameworks
+
+You can create a `RegisterNavigationGraph` instance directly in Compose state or your DI container:
+
+```kotlin
+val navigator: Navigator<AppRoute> = remember {
+    RegisterNavigationGraph(startDestination = AppRoute.Home)
+}
+```
+
+---
+
+### 3. Render Navigation UI with Jetpack Navigation 3 (`NavDisplay`)
+
+Because `navigator.backStack` is a Compose `SnapshotStateList<T>`, changes to the backstack automatically trigger UI recomposition. Bind it directly to Jetpack Navigation 3's `NavDisplay`:
+
+```kotlin
+import androidx.compose.runtime.Composable
+import androidx.navigation3.ui.NavDisplay
+import com.devmre.compose.navigation3.helper.koinNavigation
+
+@Composable
+fun MainApp() {
+    val navigator = koinNavigation<AppRoute>()
+
+    NavDisplay(
+        backstack = navigator.backStack,
+        onBack = { navigator.navigateBack() }
+    ) { route ->
+        when (route) {
+            is AppRoute.Home -> HomeScreen(
+                onItemClick = { id -> navigator.navigateTo(AppRoute.Detail(id)) }
+            )
+            is AppRoute.Detail -> DetailScreen(
+                itemId = route.itemId,
+                onBack = { navigator.navigateBack() }
+            )
+            is AppRoute.Profile -> ProfileScreen()
+            is AppRoute.Settings -> SettingsScreen()
+        }
+    }
+}
+```
+
+---
+
+### 4. Advanced Navigation Operations
+
+#### Replacing the Current Screen
+Replace the top screen in the backstack with a new route:
+
+```kotlin
+navigator.navigateTo(
+    route = AppRoute.Detail("123"),
+    options = NavigationOptions(replace = true)
+)
+```
+
+#### Switching Tabs / Top-Level Destinations
+When switching between top-level screens (e.g., bottom navigation bar), `switchTo` replaces the top screen without adding additional history entries:
+
+```kotlin
+navigator.switchTo(AppRoute.Profile)
+```
+
+#### Single Top Navigation
+Avoid duplicate entries if the route is already at the top of the stack:
+
+```kotlin
+navigator.navigateTo(
+    route = AppRoute.Settings,
+    options = NavigationOptions(launchSingleTop = true)
+)
+```
+
+#### Popping up to a Destination
+Pop screens off the backstack until a specific target class is reached:
+
+```kotlin
+// Pop back to Home (excluding Home)
+navigator.popUpTo(AppRoute.Home::class, inclusive = false)
+
+// Or via NavigationOptions while navigating:
+navigator.navigateTo(
+    route = AppRoute.Home,
+    options = NavigationOptions(popUpTo = AppRoute.Home::class, inclusive = true)
+)
+```
+
+---
+
+## API Reference
+
+### `Navigator<T : NavKey>`
+
+Interface representing the reactive navigation controller.
+
+| Method / Property | Description |
+| :--- | :--- |
+| `val backStack: SnapshotStateList<T>` | Observable Compose state list representing the navigation backstack. |
+| `fun getCurrentBackStack(): T?` | Returns the current top destination in the backstack. |
+| `fun navigateTo(route: T, options: NavigationOptions)` | Pushes a route onto the backstack with optional configuration. |
+| `fun switchTo(route: T)` | Swaps the top item on the backstack with `route` (useful for tab switches). |
+| `fun navigateBack()` | Pops the top destination off the backstack if `backStack.size > 1`. |
+| `fun popUpTo(clazz: KClass<out T>, inclusive: Boolean)` | Pops destinations until the specified destination class is encountered. |
+
+### `NavigationOptions`
+
+Configuration object for `navigateTo`:
+
+```kotlin
+data class NavigationOptions(
+    val launchSingleTop: Boolean = false,
+    val popUpTo: KClass<out NavKey>? = null,
+    val inclusive: Boolean = false,
+    val replace: Boolean = false
+)
+```
+
+### Koin Helper Functions
+
+- **`navigatorQualifier<T : NavKey>()`**: Generates a named Koin qualifier (`navigator_<FQN>`) for type-safe DI registration.
+- **`@Composable koinNavigation<T : NavKey>()`**: Injects the `Navigator<T>` instance associated with `NavKey` type `T`.
+
+---
+
+## Supported Platforms
+
+- **Android** (minSdk 24, compileSdk 36)
+- **iOS** (`iosArm64`, `iosSimulatorArm64`)
+- **JVM / Desktop**
+
+---
+
+## Contributing
+
+This repository currently does not accept public contributions. If you encounter issues or have questions, please open a GitHub issue.
+
+---
+
+## License / Usage Restrictions
+
+Copyright (c) 2026 DevMrE. All rights reserved.
+
+This library and its source code are the intellectual property of the author.
+
+No part of this software may be used, copied, modified, merged, published, distributed, sublicensed, or integrated into other software without **explicit prior permission from the author**.
+
+Permission must be obtained before:
+- Using this library in private or personal projects
+- Using this library in commercial applications
+- Redistributing the source code or binaries
+- Creating derivative works
+
+To request permission for usage, please contact the author.
+
+See the [LICENSE](./LICENSE) file for details.
